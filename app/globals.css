@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #e9e7e2;
+  --foreground: #1e1c19;
+  --concrete-grid: #d3d0c8;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.bg-blueprint-grid {
+  background-image:
+    linear-gradient(var(--concrete-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--concrete-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
