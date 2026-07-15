@@ -91,7 +91,11 @@ export const PROJECTS: Project[] = [
     status: "ongoing",
     description:
       "Hotel construction project ivory textured exterior with grey granite cladding at plinth level, maroon fascia band, and blue-tinted glazing throughout.",
-    photos: [],
+    photos: [
+      { url: "/projects/wani-hotel/front.png" },
+
+      { url: "/projects/wani-hotel/side.png" },
+    ],
     // brochureUrl: "/brochures/wani-hotel-elevations.pdf",
   },
 ];
