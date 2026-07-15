@@ -24,7 +24,8 @@ export const SERVICES = [
   {
     id: "residential",
     title: "Residential buildings",
-    description: "Bungalows, duplex houses and apartment complexes built to last.",
+    description:
+      "Bungalows, duplex houses and apartment complexes built to last.",
   },
   {
     id: "commercial",
@@ -69,6 +70,33 @@ export const WHY_CHOOSE_US = [
   "Timely project completion",
   "Transparent costing",
   "100% customer satisfaction",
+] as const;
+
+export const DIRECTORS = [
+  {
+    name: "Aditya Rai",
+    title: "Director Operations & Finance",
+    description:
+      "Oversees project operations, material management, and financial administration, ensuring smooth execution across all ongoing projects.",
+    phone: "9405220588",
+    photo: "/team/aditya-rai.jpeg",
+  },
+  {
+    name: "Harsh Bhuva",
+    title: "Director Business Development",
+    description:
+      "Leads business development, builds client relationships, and identifies new project opportunities to drive the company's growth.",
+    phone: "9307574250",
+    photo: "/team/harsh-bhuva.jpeg",
+  },
+  {
+    name: "Ajay Sojitara",
+    title: "Director Project Execution",
+    description:
+      "Heads on-site project execution, supervises construction activities, and ensures timely delivery while maintaining quality standards.",
+    phone: "9960948162",
+    photo: "/team/ajay-sojitara.jpg",
+  },
 ] as const;
 
 export const MISSION =

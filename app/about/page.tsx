@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import { existsSync } from "fs";
+import path from "path";
+import Image from "next/image";
+import { Check, Phone } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TitleBlock from "@/components/ui/TitleBlock";
-import { COMPANY, MISSION, VISION, WHY_CHOOSE_US } from "@/lib/constants";
+import {
+  COMPANY,
+  MISSION,
+  VISION,
+  WHY_CHOOSE_US,
+  DIRECTORS,
+} from "@/lib/constants";
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
 
 export const metadata: Metadata = {
   title: `About us | ${COMPANY.name}`,
@@ -53,6 +71,59 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="mt-16">
+          <h3 className="font-mono text-xs tracking-widest text-gold">
+            LEADERSHIP
+          </h3>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {DIRECTORS.map((director) => {
+              const photoExists = existsSync(
+                path.join(process.cwd(), "public", director.photo),
+              );
+
+              return (
+                <div
+                  key={director.name}
+                  className="rounded border border-concrete-line bg-concrete-card p-6"
+                >
+                  {photoExists ? (
+                    <div className="relative h-16 w-16 overflow-hidden rounded-full border border-concrete-line">
+                      <Image
+                        src={director.photo}
+                        alt={director.name}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold font-display text-lg font-bold text-paper">
+                      {getInitials(director.name)}
+                    </div>
+                  )}
+                  <h4 className="mt-4 font-display text-lg font-bold text-paper">
+                    {director.name}
+                  </h4>
+                  <p className="mt-1 text-sm font-medium text-gold">
+                    {director.title}
+                  </p>
+                  <p className="mt-3 text-sm text-stone">
+                    {director.description}
+                  </p>
+
+                  <a
+                    href={`tel:+91${director.phone}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm text-stone-muted hover:text-paper"
+                  >
+                    <Phone size={14} className="text-gold" />
+                    +91 {director.phone}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-16">

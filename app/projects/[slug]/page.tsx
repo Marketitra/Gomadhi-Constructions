@@ -17,7 +17,9 @@ export function generateStaticParams() {
   return PROJECTS.map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return { title: `Project not found | ${COMPANY.name}` };
@@ -62,7 +64,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           {project.name}
         </h1>
         <p className="mt-2 text-stone-muted">
-          {project.location} — {project.type}
+          {project.location} {project.type}
         </p>
         <p className="mt-6 max-w-2xl text-stone">{project.description}</p>
 
@@ -87,15 +89,15 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               Interested in something similar?
             </h2>
             <p className="mt-2 text-sm text-stone">
-              Tell us your plot and requirements — we'll reference {project.name} where
-              it's relevant to your build.
+              Tell us your plot and requirements we'll reference {project.name}{" "}
+              where it's relevant to your build.
             </p>
           </div>
           <EnquiryForm projectInterest={project.name} />
         </div>
 
         <div className="mt-16">
-          <TitleBlock sheet={`05 — ${project.slug.toUpperCase()}`} />
+          <TitleBlock sheet={`05 ${project.slug.toUpperCase()}`} />
         </div>
       </div>
     </div>

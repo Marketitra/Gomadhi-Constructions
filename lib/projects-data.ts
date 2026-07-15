@@ -1,5 +1,7 @@
 import type { Project } from "@/types";
 
+// Photo paths point to /public/projects/<slug>/. Drop your own photos into
+// these folders using these exact filenames, or update the paths below.
 export const PROJECTS: Project[] = [
   {
     slug: "sr-lake-view",
@@ -20,7 +22,13 @@ export const PROJECTS: Project[] = [
     status: "ongoing",
     description:
       "RCC framed commercial building at Raj Nagar, Nagpur commercial spaces project by Synergic Landcraft.",
-    photos: [{ url: "/projects/raghav-keystone/site-01.jpg" }],
+    photos: [
+      { url: "/projects/raghav-keystone/site-01.jpg" },
+      { url: "/projects/raghav-keystone/site-02.jpg" },
+      { url: "/projects/raghav-keystone/site-03.jpeg" },
+      { url: "/projects/raghav-keystone/site-04.jpg" },
+      { url: "/projects/raghav-keystone/site-05.jpg" },
+    ],
     brochureUrl: "/brochures/raghav-keystone.pdf",
   },
   {
@@ -42,5 +50,40 @@ export const PROJECTS: Project[] = [
     status: "ongoing",
     description: "RCC framed residential building in Bes-Pipla, Nagpur.",
     photos: [{ url: "/projects/gokuldham/site-01.jpg" }],
+  },
+  {
+    slug: "gmc-trauma-care-extension",
+    name: "GMC Trauma Care Extension",
+    location: "Nagpur",
+    type: "Institutional Healthcare",
+    status: "ongoing",
+    description:
+      "Extension of the Government Medical College trauma care facility RCC framed structure currently at slab and shuttering stage.",
+    photos: [
+      { url: "/projects/gmc-trauma-care-extension/site-01.jpg" },
+      { url: "/projects/gmc-trauma-care-extension/site-02.jpg" },
+      { url: "/projects/gmc-trauma-care-extension/site-03.jpg" },
+      { url: "/projects/gmc-trauma-care-extension/site-04.jpg" },
+    ],
+  },
+  {
+    slug: "ycce-campus-multi-sports-complex",
+    name: "YCCE Campus Multi Sports Complex",
+    location: "Nagpur",
+    type: "Institutional Sports facility",
+    status: "ongoing",
+    description:
+      "Multi sports complex under construction on the YCCE campus, Nagpur.",
+    photos: [],
+  },
+  {
+    slug: "ayurvedic-college-extension",
+    name: "Ayurvedic College Extension",
+    location: "Nagpur",
+    type: "Institutional Educational",
+    status: "ongoing",
+    description:
+      "Extension block under construction for an ayurvedic college in Nagpur.",
+    photos: [],
   },
 ];
