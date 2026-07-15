@@ -91,9 +91,9 @@ export const DIRECTORS = [
   },
   {
     name: "Aditya Rai",
-    title: "Director Operations & Finance",
+    title: "Director Projects & Procurement",
     description:
-      "Oversees project operations, material management, and financial administration, ensuring smooth execution across all ongoing projects.",
+      "Oversees project planning, procurement of construction materials, and ensures smooth execution of ongoing projects.",
     phone: "9405220588",
     photo: "/team/aditya-rai.jpeg",
   },
