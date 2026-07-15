@@ -20,6 +20,13 @@ body {
   background-size: 24px 24px;
 }
 
+.text-scrim {
+  text-shadow:
+    0 1px 2px var(--background),
+    0 2px 8px var(--background),
+    0 0 20px var(--background);
+}
+
 @keyframes heroKenBurns {
   from {
     transform: scale(1);

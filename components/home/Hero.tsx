@@ -25,8 +25,8 @@ export default function Hero() {
           <span className="text-rust">Built to hold.</span>
         </h1>
         <p className="mt-5 max-w-md text-stone">
-          Turnkey RCC construction across Nagpur — residential, commercial and
-          industrial — with material supply included from foundation to final
+          Turnkey RCC construction across Nagpur residential, commercial and
+          industrial with material supply included from foundation to final
           coat.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -40,7 +40,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pb-6">
-        <TitleBlock sheet="01 — HOME" />
+        <TitleBlock sheet="01 HOME" />
       </div>
     </section>
   );

@@ -10,12 +10,9 @@ export const PROJECTS: Project[] = [
     type: "Residential",
     status: "ongoing",
     description:
-      "RCC framed residential building at Sonegaon, Nagpur — apartment-style residential tower under construction.",
-    photos: [
-      { url: "/projects/sr-lake-view/site-01.jpg" },
-      { url: "/projects/sr-lake-view/site-02.jpg" },
-    ],
-    floors: 7,
+      "RCC framed residential building at Sonegaon, Nagpur apartment-style residential tower under construction.",
+    photos: [{ url: "/projects/sr-lake-view/site-01.jpg" }],
+    floors: 9,
   },
   {
     slug: "raghav-keystone",
@@ -26,11 +23,8 @@ export const PROJECTS: Project[] = [
     description:
       "RCC framed commercial building at Raj Nagar, Nagpur commercial spaces project by Synergic Landcraft.",
     photos: [
+      { url: "/projects/raghav-keystone/primary.jpeg" },
       { url: "/projects/raghav-keystone/site-01.jpg" },
-      { url: "/projects/raghav-keystone/site-02.jpg" },
-      { url: "/projects/raghav-keystone/site-03.jpeg" },
-      { url: "/projects/raghav-keystone/site-04.jpg" },
-      { url: "/projects/raghav-keystone/site-05.jpg" },
     ],
     brochureUrl: "/brochures/raghav-keystone.pdf",
   },
@@ -88,5 +82,16 @@ export const PROJECTS: Project[] = [
     description:
       "Extension block under construction for an ayurvedic college in Nagpur.",
     photos: [],
+  },
+  {
+    slug: "wani-hotel",
+    name: "Wani Hotel",
+    location: "Nagpur",
+    type: "Hospitality",
+    status: "ongoing",
+    description:
+      "Hotel construction project ivory textured exterior with grey granite cladding at plinth level, maroon fascia band, and blue-tinted glazing throughout.",
+    photos: [],
+    // brochureUrl: "/brochures/wani-hotel-elevations.pdf",
   },
 ];
