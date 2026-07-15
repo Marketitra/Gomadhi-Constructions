@@ -74,14 +74,6 @@ export const WHY_CHOOSE_US = [
 
 export const DIRECTORS = [
   {
-    name: "Aditya Rai",
-    title: "Director Operations & Finance",
-    description:
-      "Oversees project operations, material management, and financial administration, ensuring smooth execution across all ongoing projects.",
-    phone: "9405220588",
-    photo: "/team/aditya-rai.jpeg",
-  },
-  {
     name: "Harsh Bhuva",
     title: "Director Business Development",
     description:
@@ -96,6 +88,14 @@ export const DIRECTORS = [
       "Heads on-site project execution, supervises construction activities, and ensures timely delivery while maintaining quality standards.",
     phone: "9960948162",
     photo: "/team/ajay-sojitara.jpg",
+  },
+  {
+    name: "Aditya Rai",
+    title: "Director Operations & Finance",
+    description:
+      "Oversees project operations, material management, and financial administration, ensuring smooth execution across all ongoing projects.",
+    phone: "9405220588",
+    photo: "/team/aditya-rai.jpeg",
   },
 ] as const;
 
