@@ -1,71 +1,58 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface HeroBackgroundProps {
-  unfinishedSrc: string;
-  finishedSrc: string;
+  images: string[];
+  intervalMs?: number;
 }
 
 export default function HeroBackground({
-  unfinishedSrc,
-  finishedSrc,
+  images,
+  intervalMs = 5000,
 }: HeroBackgroundProps) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    let ticking = false;
-
-    function update() {
-      const el = sectionRef.current;
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        const scrolled = -rect.top;
-        const total = rect.height || 1;
-        const next = Math.min(Math.max(scrolled / total, 0), 1);
-        setProgress(next);
-      }
-      ticking = false;
-    }
-
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, intervalMs);
+    return () => clearInterval(timer);
+  }, [images.length, intervalMs]);
 
   return (
-    <div ref={sectionRef} className="absolute inset-0 overflow-hidden">
-      <Image
-        src={unfinishedSrc}
-        alt="Construction site, framing stage"
-        fill
-        priority
-        className="object-cover grayscale-[15%] contrast-105"
-        style={{ opacity: 1 - progress }}
-      />
-      <Image
-        src={finishedSrc}
-        alt="Construction site, further along"
-        fill
-        className="object-cover grayscale-[15%] contrast-105"
-        style={{ opacity: progress }}
-      />
-      <div className="absolute inset-0 bg-concrete/25 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-r from-concrete from-[15%] via-concrete/75 via-[45%] to-transparent to-[85%]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-concrete/40 via-transparent to-transparent" />
+    <div className="absolute inset-0 overflow-hidden bg-concrete">
+      {images.map((src, index) => (
+        <div
+          key={src}
+          className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+          style={{ opacity: index === activeIndex ? 1 : 0 }}
+        >
+          <div
+            className="h-full w-full"
+            style={{
+              animation:
+                index === activeIndex
+                  ? `heroKenBurns ${intervalMs + 1500}ms ease-out forwards`
+                  : undefined,
+            }}
+          >
+            <Image
+              src={src}
+              alt="Gomadhi Construction project site"
+              fill
+              priority={index === 0}
+              className="object-cover object-center grayscale-[15%] contrast-105"
+            />
+          </div>
+        </div>
+      ))}
+
+      <div className="absolute inset-0 bg-concrete/10 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-r from-concrete/90 from-[10%] via-concrete/45 via-[40%] to-transparent to-[75%]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-concrete/25 via-transparent to-transparent" />
     </div>
   );
 }

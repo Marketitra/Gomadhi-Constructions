@@ -7,7 +7,7 @@ export const COMPANY = {
     line2: "Manish Nagar Beltarodi Road, Pantheon Society",
     city: "Nagpur, Maharashtra",
   },
-  phones: ["9405220588", "9960948162"],
+  phones: ["9405220588", "9960948162", "9307574250"],
   gstn: "27AAHCG0325J2ZP",
   whatsappNumber: "919405220588",
 } as const;

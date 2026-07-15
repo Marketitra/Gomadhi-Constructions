@@ -10,9 +10,12 @@ export const PROJECTS: Project[] = [
     type: "Residential",
     status: "ongoing",
     description:
-      "RCC framed residential building at Sonegaon, Nagpur apartment-style residential tower under construction.",
-    photos: [{ url: "/projects/sr-lake-view/site-01.jpg" }],
-    floors: 9,
+      "RCC framed residential building at Sonegaon, Nagpur — apartment-style residential tower under construction.",
+    photos: [
+      { url: "/projects/sr-lake-view/site-01.jpg" },
+      { url: "/projects/sr-lake-view/site-02.jpg" },
+    ],
+    floors: 7,
   },
   {
     slug: "raghav-keystone",

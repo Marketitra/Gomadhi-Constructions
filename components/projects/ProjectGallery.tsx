@@ -15,13 +15,13 @@ export default function ProjectGallery({ photos }: { photos: ProjectPhoto[] }) {
       {photos.map((photo, index) => (
         <div
           key={photo.url}
-          className="relative h-64 overflow-hidden rounded border border-concrete-line bg-concrete-grid"
+          className="relative h-96 overflow-hidden rounded border border-concrete-line bg-concrete-card"
         >
           <Image
             src={photo.url}
             alt={photo.caption ?? `Site photo ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           {photo.caption && (

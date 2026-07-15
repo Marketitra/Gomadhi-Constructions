@@ -7,10 +7,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-[640px] overflow-hidden border-b border-concrete-line">
       <HeroBackground
-        unfinishedSrc="/projects/raghav-keystone/site-01.jpg"
-        finishedSrc="/projects/sr-lake-view/site-01.jpg"
+        images={[
+          "https://images.pexels.com/photos/35482397/pexels-photo-35482397.jpeg?auto=compress&cs=tinysrgb&w=1920",
+          "https://images.pexels.com/photos/17909242/pexels-photo-17909242.jpeg?auto=compress&cs=tinysrgb&w=1920",
+          "https://images.pexels.com/photos/34911458/pexels-photo-34911458.jpeg?auto=compress&cs=tinysrgb&w=1920",
+          "https://images.pexels.com/photos/31268433/pexels-photo-31268433.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        ]}
       />
-
       <div className="relative mx-auto flex min-h-[640px] max-w-6xl flex-col justify-center px-6 py-20">
         <span className="font-mono text-xs tracking-widest text-gold">
           {COMPANY.shortName.toUpperCase()} —{" "}
@@ -22,8 +25,8 @@ export default function Hero() {
           <span className="text-rust">Built to hold.</span>
         </h1>
         <p className="mt-5 max-w-md text-stone">
-          Turnkey RCC construction across Nagpur residential, commercial and
-          industrial with material supply included from foundation to final
+          Turnkey RCC construction across Nagpur — residential, commercial and
+          industrial — with material supply included from foundation to final
           coat.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -37,7 +40,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pb-6">
-        <TitleBlock sheet="01 HOME" />
+        <TitleBlock sheet="01 — HOME" />
       </div>
     </section>
   );
