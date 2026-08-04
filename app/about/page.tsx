@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { existsSync } from "fs";
 import path from "path";
 import Image from "next/image";
-import { Check, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TitleBlock from "@/components/ui/TitleBlock";
+import MagicBento from "@/components/reactbits/MagicBento";
 import {
   COMPANY,
   MISSION,
   VISION,
-  WHY_CHOOSE_US,
   DIRECTORS,
 } from "@/lib/constants";
 
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="px-6 py-20">
-      <div className="mx-auto max-w-4xl">
+    <div className="px-6 py-20 bg-concrete">
+      <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="ABOUT US"
           title={`${COMPANY.shortName}, Nagpur`}
@@ -44,40 +44,36 @@ export default function AboutPage() {
           completion, and lasting value to our clients.
         </p>
 
+        {/* Mission & Vision */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           <div className="rounded border border-concrete-line bg-concrete-card p-6">
-            <h3 className="font-mono text-xs tracking-widest text-gold">
+            <h3 className="font-mono text-xs tracking-widest text-gold font-semibold uppercase">
               MISSION
             </h3>
-            <p className="mt-3 text-stone">{MISSION}</p>
+            <p className="mt-3 text-stone leading-relaxed text-sm">{MISSION}</p>
           </div>
           <div className="rounded border border-concrete-line bg-concrete-card p-6">
-            <h3 className="font-mono text-xs tracking-widest text-gold">
+            <h3 className="font-mono text-xs tracking-widest text-gold font-semibold uppercase">
               VISION
             </h3>
-            <p className="mt-3 text-stone">{VISION}</p>
+            <p className="mt-3 text-stone leading-relaxed text-sm">{VISION}</p>
           </div>
         </div>
 
-        <div className="mt-14">
-          <h3 className="font-mono text-xs tracking-widest text-gold">
+        {/* ReactBits Magic Bento Grid */}
+        <div className="mt-16">
+          <h3 className="font-mono text-xs tracking-widest text-gold font-semibold uppercase mb-6">
             WHY CHOOSE GOMADHI CONSTRUCTION
           </h3>
-          <ul className="mt-4 flex flex-col gap-3">
-            {WHY_CHOOSE_US.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-paper">
-                <Check size={18} className="mt-0.5 shrink-0 text-gold" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <MagicBento />
         </div>
 
-        <div className="mt-16">
-          <h3 className="font-mono text-xs tracking-widest text-gold">
+        {/* Leadership Section */}
+        <div className="mt-20">
+          <h3 className="font-mono text-xs tracking-widest text-gold font-semibold uppercase mb-6">
             LEADERSHIP
           </h3>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DIRECTORS.map((director) => {
               const photoExists = existsSync(
                 path.join(process.cwd(), "public", director.photo),
@@ -86,7 +82,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={director.name}
-                  className="rounded border border-concrete-line bg-concrete-card p-6"
+                  className="rounded-2xl border border-concrete-line bg-concrete-card p-6 transition-all duration-300 hover:border-gold/50 shadow-sm"
                 >
                   {photoExists ? (
                     <div className="relative h-16 w-16 overflow-hidden rounded-full border border-concrete-line">
@@ -106,16 +102,16 @@ export default function AboutPage() {
                   <h4 className="mt-4 font-display text-lg font-bold text-paper">
                     {director.name}
                   </h4>
-                  <p className="mt-1 text-sm font-medium text-gold">
+                  <p className="mt-1 text-xs font-semibold text-gold font-mono uppercase tracking-wider">
                     {director.title}
                   </p>
-                  <p className="mt-3 text-sm text-stone">
+                  <p className="mt-3 text-xs leading-relaxed text-stone">
                     {director.description}
                   </p>
 
                   <a
                     href={`tel:+91${director.phone}`}
-                    className="mt-4 inline-flex items-center gap-2 text-sm text-stone-muted hover:text-paper"
+                    className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-stone hover:text-paper"
                   >
                     <Phone size={14} className="text-gold" />
                     +91 {director.phone}
