@@ -3,6 +3,8 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { Project } from "@/models/Project";
 import { PROJECTS } from "@/lib/projects-data";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     await connectToDatabase();
