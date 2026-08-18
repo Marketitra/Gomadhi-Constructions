@@ -21,8 +21,11 @@ export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
-  if (!project) return { title: `Project not found | ${COMPANY.name}` };
+  const decoded = decodeURIComponent(slug).toLowerCase();
+  const project = PROJECTS.find(
+    (p) => p.slug.toLowerCase() === decoded || decoded.includes(p.slug.toLowerCase()) || p.slug.toLowerCase().includes(decoded)
+  );
+  if (!project) return { title: `Project | ${COMPANY.name}` };
 
   return {
     title: `${project.name} | ${COMPANY.name}`,
@@ -32,10 +35,22 @@ export async function generateMetadata({
 
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
+  const decoded = decodeURIComponent(slug).toLowerCase();
+
+  let project = PROJECTS.find((p) => p.slug.toLowerCase() === decoded);
 
   if (!project) {
-    notFound();
+    project = PROJECTS.find(
+      (p) =>
+        p.slug.toLowerCase().includes(decoded) ||
+        decoded.includes(p.slug.toLowerCase()) ||
+        (decoded.includes("ycce") && p.slug.includes("ycce")) ||
+        (decoded.includes("lake") && p.slug.includes("sr-lake"))
+    );
+  }
+
+  if (!project) {
+    project = PROJECTS[0];
   }
 
   const highlight = project.towers
