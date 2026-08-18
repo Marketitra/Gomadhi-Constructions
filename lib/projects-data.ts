@@ -11,7 +11,11 @@ export const PROJECTS: Project[] = [
     status: "ongoing",
     description:
       "RCC framed residential building at Sonegaon, Nagpur apartment-style residential tower under construction.",
-    photos: [{ url: "/projects/sr-lake-view/site-01.jpg" }],
+    photos: [
+      { url: "/projects/sr-lake-view/sr-lake.jpeg" },
+      { url: "/projects/sr-lake-view/site-01.jpg" },
+      { url: "/projects/sr-lake-view/site-02.jpg" },
+    ],
     floors: 7,
   },
   {
@@ -70,8 +74,11 @@ export const PROJECTS: Project[] = [
     type: "Institutional Sports facility",
     status: "ongoing",
     description:
-      "Multi sports complex under construction on the YCCE campus, Nagpur.",
-    photos: [],
+      "Multi sports complex and campus development under construction on the YCCE campus, Nagpur.",
+    photos: [
+      { url: "/projects/ycce-sports/ycce-multisport.jpeg" },
+      { url: "/projects/ycce-sports/ycce-landscape.jpeg" },
+    ],
   },
   {
     slug: "ayurvedic-college-extension",
@@ -93,9 +100,9 @@ export const PROJECTS: Project[] = [
       "Hotel construction project ivory textured exterior with grey granite cladding at plinth level, maroon fascia band, and blue-tinted glazing throughout.",
     photos: [
       { url: "/projects/wani-hotel/front.png" },
-
       { url: "/projects/wani-hotel/side.png" },
     ],
-    // brochureUrl: "/brochures/wani-hotel-elevations.pdf",
   },
 ];
+
+

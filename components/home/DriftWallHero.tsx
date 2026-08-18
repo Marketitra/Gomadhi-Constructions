@@ -58,19 +58,19 @@ export default function DriftWallHero() {
 
   return (
     <section className="relative overflow-hidden bg-concrete pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-concrete-line select-none">
-      <div 
+      <div
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(217,160,0,0.07)_0%,rgba(223,220,213,0)_70%)] pointer-events-none"
       />
 
-      <div 
-        className="absolute inset-0 bg-[radial-gradient(#1e1c19_1px,transparent_1px)] [background-size:32px_32px] sm:[background-size:36px_36px] opacity-[0.05] pointer-events-none" 
+      <div
+        className="absolute inset-0 bg-[radial-gradient(#1e1c19_1px,transparent_1px)] [background-size:32px_32px] sm:[background-size:36px_36px] opacity-[0.05] pointer-events-none"
       />
 
       <div className="absolute top-1/4 left-1/3 w-[300px] sm:w-[600px] h-[200px] sm:h-[350px] bg-gold/10 blur-[100px] sm:blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center min-h-[auto] lg:min-h-[580px]">
-          
+
           <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
             <span className="font-mono text-[11px] sm:text-xs tracking-widest text-gold font-semibold uppercase mb-2 sm:mb-3">
               {COMPANY.shortName.toUpperCase()} — {COMPANY.address.city.toUpperCase()}
@@ -96,7 +96,7 @@ export default function DriftWallHero() {
               >
                 Get a Quote
               </Button>
-              
+
               <Button
                 href="/projects"
                 variant="secondary"
@@ -109,11 +109,11 @@ export default function DriftWallHero() {
 
           <div className="lg:col-span-6 relative h-[380px] sm:h-[480px] lg:h-[580px] w-full overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-10 sm:h-14 bg-gradient-to-b from-concrete via-concrete/70 to-transparent z-20 pointer-events-none" />
-            
+
             <div className="absolute bottom-0 inset-x-0 h-10 sm:h-14 bg-gradient-to-t from-concrete via-concrete/70 to-transparent z-20 pointer-events-none" />
 
             <div className="grid grid-cols-2 gap-2.5 sm:gap-4 h-full">
-              
+
               <div className="overflow-hidden h-full">
                 <motion.div
                   animate={{ y: ["0%", "-50%"] }}
@@ -138,7 +138,7 @@ export default function DriftWallHero() {
                         sizes="(max-width: 768px) 50vw, 350px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-paper/85 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                      
+
                       <div className="absolute bottom-0 inset-x-0 p-2.5 sm:p-4">
                         <h3 className="font-display text-[11px] sm:text-xs lg:text-sm font-bold text-concrete-card leading-tight">
                           {item.title}
@@ -173,7 +173,7 @@ export default function DriftWallHero() {
                         sizes="(max-width: 768px) 50vw, 350px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-paper/85 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                      
+
                       <div className="absolute bottom-0 inset-x-0 p-2.5 sm:p-4">
                         <h3 className="font-display text-[11px] sm:text-xs lg:text-sm font-bold text-concrete-card leading-tight">
                           {item.title}
