@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileDown } from "lucide-react";
 import Badge from "@/components/ui/Badge";
@@ -95,7 +94,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         )}
 
         <div className="mt-10">
-          <ProjectGallery photos={project.photos} />
+          <ProjectGallery photos={project.photos} videos={project.videos} />
         </div>
 
         <div className="mt-16 grid gap-10 border-t border-concrete-line pt-10 sm:grid-cols-2">

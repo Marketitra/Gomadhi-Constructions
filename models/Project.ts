@@ -8,6 +8,14 @@ const ProjectPhotoSchema = new Schema(
   { _id: false }
 );
 
+const ProjectVideoSchema = new Schema(
+  {
+    url: { type: String, required: true },
+    caption: { type: String },
+  },
+  { _id: false }
+);
+
 export interface ProjectDocument extends mongoose.Document {
   slug: string;
   name: string;
@@ -16,6 +24,7 @@ export interface ProjectDocument extends mongoose.Document {
   status: "ongoing" | "completed";
   description: string;
   photos: { url: string; caption?: string }[];
+  videos?: { url: string; caption?: string }[];
   floors?: number;
   towers?: number;
 }
@@ -28,6 +37,7 @@ const ProjectSchema = new Schema<ProjectDocument>({
   status: { type: String, enum: ["ongoing", "completed"], default: "ongoing" },
   description: { type: String, required: true },
   photos: { type: [ProjectPhotoSchema], default: [] },
+  videos: { type: [ProjectVideoSchema], default: [] },
   floors: { type: Number },
   towers: { type: Number },
 });
