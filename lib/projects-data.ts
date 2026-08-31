@@ -1,7 +1,5 @@
 import type { Project } from "@/types";
 
-// Photo paths point to /public/projects/<slug>/. Drop your own photos into
-// these folders using these exact filenames, or update the paths below.
 export const PROJECTS: Project[] = [
   {
     slug: "sr-lake-view",
@@ -10,11 +8,16 @@ export const PROJECTS: Project[] = [
     type: "Residential",
     status: "ongoing",
     description:
-      "RCC framed residential building at Sonegaon, Nagpur apartment-style residential tower under construction.",
+      "RCC framed premium residential apartment building located in Sonegaon, Nagpur featuring multi-story contemporary residential units, spacious floor layouts, and engineered structural finishes.",
     photos: [
-      { url: "/projects/sr-lake-view/sr-lake.jpeg" },
-      { url: "/projects/sr-lake-view/site-01.jpg" },
-      { url: "/projects/sr-lake-view/site-02.jpg" },
+      { url: "/projects/sr-lake-view/sr-lake.jpeg", caption: "Floor Plan Diagram" },
+      { url: "/projects/sr-lake-view/lake1.jpeg", caption: "Elevation Render" },
+      { url: "/projects/sr-lake-view/lake2.jpeg", caption: "Floor Plan & Unit Layout" },
+      { url: "/projects/sr-lake-view/lake3.jpeg", caption: "Architectural Exterior View" },
+    ],
+    videos: [
+      { url: "/projects/sr-lake-view/sr-view.mp4", caption: "Project Overview Video" },
+      { url: "/projects/sr-lake-view/sr-view2.mp4", caption: "Construction & Site Walkthrough" },
     ],
     floors: 7,
   },
@@ -104,5 +107,3 @@ export const PROJECTS: Project[] = [
     ],
   },
 ];
-
-

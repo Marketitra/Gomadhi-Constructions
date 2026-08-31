@@ -5,6 +5,11 @@ export interface ProjectPhoto {
   caption?: string;
 }
 
+export interface ProjectVideo {
+  url: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -13,6 +18,7 @@ export interface Project {
   status: ProjectStatus;
   description: string;
   photos: ProjectPhoto[];
+  videos?: ProjectVideo[];
   floors?: number;
   towers?: number;
   brochureUrl?: string;
